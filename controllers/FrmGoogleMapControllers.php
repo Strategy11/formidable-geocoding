@@ -14,8 +14,8 @@ class FrmGoogleMapController{
     }
     
     public static function register_scripts() {
-        wp_register_script('frm_google_api', 'https://maps.googleapis.com/maps/api/js?sensor=false', array(), true );
-        wp_register_script('frm_google_script',  dirname(dirname(__FILE__)) . '/js/frmmap.js', array( 'frm_google_api' ), true );
+	    wp_register_script('frm_google_api', 'https://maps.googleapis.com/maps/api/js?sensor=false', array(), null );
+	    wp_register_script('frm_google_script', plugin_dir_url(__FILE__).'../js/frmmap.js', array( 'frm_google_api' ) );
     }
     
     public static function style() {
